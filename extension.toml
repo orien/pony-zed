@@ -1,7 +1,7 @@
 id = "pony"
 name = "Pony"
-description = "Pony language support with syntax highlighting"
-version = "0.1.0"
+description = "Pony language support with syntax highlighting and LSP integration"
+version = "0.2.0"
 schema_version = 1
 authors = ["Orien Madgwick <497874+orien@users.noreply.github.com>"]
 repository = "https://github.com/orien/pony-zed-extension"
@@ -9,3 +9,12 @@ repository = "https://github.com/orien/pony-zed-extension"
 [grammars.pony]
 repository = "https://github.com/tree-sitter-grammars/tree-sitter-pony"
 commit = "73ff874ae4c9e9b45462673cbc0a1e350e2522a7"
+
+[language_servers.pony-language-server]
+name = "Pony Language Server"
+languages = ["Pony"]
+
+[settings.pony_stdlib_path]
+type = "string"
+default = ""
+description = "Path to the Pony standard library packages directory. Find it with: readlink -f $(which ponyc) | sed 's|/bin/ponyc|/packages|'. Example: /opt/homebrew/Cellar/ponyc/0.60.4/packages"
