@@ -1,4 +1,4 @@
-# Zed Pony
+# Pony Zed Extension
 
 Pony language support for the [Zed editor](https://zed.dev).
 
