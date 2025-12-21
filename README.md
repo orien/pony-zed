@@ -17,6 +17,7 @@ Pony language support for the [Zed editor](https://zed.dev).
 This extension provides Pony language support for Zed, including:
 
 - [x] Syntax highlighting
+- [x] Auto-indentation
 - [ ] Code formatting
 - [ ] Language Server Protocol (LSP) integration
 - [ ] Snippets and completions
@@ -63,7 +64,8 @@ pony-zed-extension/
 ├── languages/          # Language definitions
 │   └── pony/
 │       ├── config.toml      # Language configuration
-│       └── highlights.scm   # Syntax highlighting rules
+│       ├── highlights.scm   # Syntax highlighting rules
+│       └── indents.scm      # Auto-indentation rules
 ├── LICENSE
 └── README.md
 ```
