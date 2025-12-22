@@ -1,3 +1,4 @@
 # Zed extension build artifacts
 grammars/
 target/
+*.wasm
