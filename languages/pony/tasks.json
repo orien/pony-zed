@@ -1,0 +1,16 @@
+[
+  {
+    "label": "corral fetch",
+    "command": "corral",
+    "args": ["fetch"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always"
+  },
+  {
+    "label": "corral run -- ponyc",
+    "command": "corral",
+    "args": ["run", "--", "ponyc"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always"
+  }
+]
