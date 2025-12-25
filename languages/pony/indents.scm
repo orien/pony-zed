@@ -1,6 +1,11 @@
 ; Source: https://github.com/tree-sitter-grammars/tree-sitter-pony/blob/master/queries/indents.scm
 ; Commit: 73ff874ae4c9e9b45462673cbc0a1e350e2522a7
 ; Last synced: 2025-12-21
+;
+; Adaptations for Zed:
+; 1. Changed @indent_end → @end (Zed's standard closing delimiter capture)
+; 2. Removed @branch captures (not supported in Zed's indent system)
+; 3. Removed @auto captures (not supported in Zed's indent system)
 
 [
   (use_statement)
@@ -48,17 +53,4 @@
   "}"
   "]"
   ")"
-] @indent_end
-
-[ "{" "}" ] @branch
-
-[ "[" "]" ] @branch
-
-[ "(" ")" ] @branch
-
-[
-  (ERROR)
-  (string)
-  (line_comment)
-  (block_comment)
-] @auto
+] @end
