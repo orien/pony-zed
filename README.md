@@ -16,11 +16,14 @@ Pony language support for the [Zed editor](https://zed.dev).
 
 This extension provides Pony language support for Zed, including:
 
-- Syntax highlighting
-- Auto-indentation
-- Code navigation (outline panel and breadcrumbs)
-- Language Server Protocol (LSP) integration
-- Go to definition
+- **Syntax highlighting** - Full syntax highlighting for Pony language constructs
+- **Auto-indentation** - Smart indentation based on code structure
+- **Code navigation** - Outline panel and breadcrumbs for quick navigation
+- **Bracket matching** - Syntax-aware bracket pairing and rainbow brackets
+- **Vim text objects** - Text objects for functions, classes, and comments (vim mode)
+- **Corral tasks** - Built-in tasks for fetching dependencies and building projects
+- **Language Server Protocol (LSP)** integration - Basic LSP support
+- **Go to definition** - Navigate to symbol definitions
 
 **Note:** The Pony LSP server (v0.2.2) is still in early development. Additional features like hover documentation, code completion, find references, and rename are not yet implemented in the server itself.
 
@@ -102,6 +105,20 @@ Or manually locate it based on your Pony installation:
 
 Replace `VERSION` with your installed Pony version (e.g., `0.60.4`).
 
+## Usage
+
+### Corral Tasks
+
+The extension provides built-in tasks for Corral (Pony's package manager):
+
+- **corral fetch** - Download dependencies defined in `corral.json`
+- **corral run -- ponyc** - Build your project using Corral's package paths
+
+To run a task:
+1. Open the command palette: `cmd-shift-P` (macOS) or `ctrl-shift-P` (Linux/Windows)
+2. Type "task" and select "task: spawn"
+3. Choose a corral task from the list
+
 ## Development
 
 ### Prerequisites
@@ -128,13 +145,16 @@ pony-zed-extension/
 ├── Cargo.toml          # Rust project manifest
 ├── extension.toml      # Extension metadata and LSP registration
 ├── src/
-│   └── lib.rs          # LSP integration code
+│   └── pony.rs         # LSP integration code
 ├── languages/          # Language definitions
 │   └── pony/
 │       ├── config.toml      # Language configuration
 │       ├── highlights.scm   # Syntax highlighting rules
 │       ├── indents.scm      # Auto-indentation rules
-│       └── outline.scm      # Code navigation and outline
+│       ├── outline.scm      # Code navigation and outline
+│       ├── brackets.scm     # Bracket matching rules
+│       ├── textobjects.scm  # Vim text object definitions
+│       └── tasks.json       # Corral build tasks
 ├── LICENSE
 └── README.md
 ```
