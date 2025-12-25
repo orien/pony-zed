@@ -3,21 +3,17 @@
 ; Last synced: 2025-12-21
 ;
 ; Adaptations for Zed:
-; 1. Changed @conditional → @keyword.conditional (standard Zed capture name)
-; 2. Changed @repeat → @keyword.repeat (standard Zed capture name)
-; 3. Changed @exception → @keyword.exception (standard Zed capture name)
-; 4. Simplified comment captures - removed @spell, split into separate patterns
+; 1. Changed @include → @keyword (Zed does not support @include capture)
+; 2. Changed @conditional → @keyword.conditional (standard Zed capture name)
+; 3. Changed @repeat → @keyword.repeat (standard Zed capture name)
+; 4. Changed @exception → @keyword.exception (standard Zed capture name)
+; 5. Simplified comment captures - removed @spell, split into separate patterns
 ;    for better Zed theme compatibility
-
-; Includes
-
-[
-  "use"
-] @include
 
 ; Keywords
 
 [
+  "use"
   "type"
   "actor"
   "class"
