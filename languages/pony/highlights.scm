@@ -1,6 +1,13 @@
 ; Source: https://github.com/tree-sitter-grammars/tree-sitter-pony/blob/master/queries/highlights.scm
 ; Commit: 73ff874ae4c9e9b45462673cbc0a1e350e2522a7
 ; Last synced: 2025-12-21
+;
+; Adaptations for Zed:
+; 1. Changed @conditional → @keyword.conditional (standard Zed capture name)
+; 2. Changed @repeat → @keyword.repeat (standard Zed capture name)
+; 3. Changed @exception → @keyword.exception (standard Zed capture name)
+; 4. Simplified comment captures - removed @spell, split into separate patterns
+;    for better Zed theme compatibility
 
 ; Includes
 
@@ -70,13 +77,13 @@
   "elseif"
   "until"
   "match"
-] @conditional
+] @keyword.conditional
 
-(if_statement "end" @conditional)
+(if_statement "end" @keyword.conditional)
 
-(iftype_statement "end" @conditional)
+(iftype_statement "end" @keyword.conditional)
 
-(match_statement "end" @conditional)
+(match_statement "end" @keyword.conditional)
 
 ; Repeats
 
@@ -87,11 +94,11 @@
   "continue"
   "do"
   "break"
-] @repeat
+] @keyword.repeat
 
-(do_block "end" @repeat)
+(do_block "end" @keyword.repeat)
 
-(repeat_statement "end" @repeat)
+(repeat_statement "end" @keyword.repeat)
 
 ; Exceptions
 
@@ -99,11 +106,11 @@
   "try"
   (error)
   "compile_error"
-] @exception
+] @keyword.exception
 
-(try_statement "end" @exception)
+(try_statement "end" @keyword.exception)
 
-(recover_statement "end" @exception)
+(recover_statement "end" @keyword.exception)
 
 ; Attributes
 
@@ -284,10 +291,9 @@
 
 ; Comments
 
-[
-  (line_comment)
-  (block_comment)
-] @comment @spell
+(line_comment) @comment
+
+(block_comment) @comment
 
 ; Errors
 
