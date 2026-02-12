@@ -199,4 +199,4 @@ If the LSP server is running but features don't work:
 
 ## License
 
-This project is licensed under the 3-Clause BSD License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the 2-Clause BSD License. See the [LICENSE](LICENSE) file for details.
