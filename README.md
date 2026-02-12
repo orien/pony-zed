@@ -86,6 +86,7 @@ The extension needs to know where to find the Pony standard library packages. Ad
   "lsp": {
     "pony-language-server": {
       "settings": {
+        "executable": "/home/user/pony/bin/pony-lsp",
         "pony_stdlib_path": "/opt/homebrew/Cellar/ponyc/0.60.4/packages"
       }
     }

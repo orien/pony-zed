@@ -14,6 +14,11 @@ commit = "73ff874ae4c9e9b45462673cbc0a1e350e2522a7"
 name = "Pony Language Server"
 languages = ["Pony"]
 
+[settings.executable]
+type = "string"
+default = "pony-lsp"
+description = "File location of the Pony language server executable. If not set, will search for `pony-lsp` on the system PATH."
+
 [settings.pony_stdlib_path]
 type = "string"
 default = ""

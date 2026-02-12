@@ -12,13 +12,27 @@ impl zed::Extension for PonyExtension {
         _language_server_id: &zed::LanguageServerId,
         worktree: &zed::Worktree,
     ) -> Result<zed::Command> {
-        let server_path = worktree
-            .which("pony-lsp")
-            .ok_or_else(|| {
+        // Check for custom pony-lsp path in settings first
+        let server_path = LspSettings::for_worktree("pony-language-server", worktree)
+            .ok()
+            .and_then(|settings| settings.settings)
+            .and_then(|settings_value| {
+                settings_value
+                    .get("executable")
+                    .and_then(|v| v.as_str())
+                    .filter(|path| !path.is_empty())
+                    .map(|path| path.to_string())
+            });
+
+        // Fall back to PATH lookup if not configured
+        let server_path = match server_path {
+            Some(path) => path,
+            None => worktree.which("pony-lsp").ok_or_else(|| {
                 "pony-lsp not found on PATH. \
-                Please install from https://github.com/ponylang/pony-language-server"
+                    Please install from https://github.com/ponylang/ponyc"
                     .to_string()
-            })?;
+            })?,
+        };
 
         // Get the shell environment as a starting point
         let mut env = worktree.shell_env();
