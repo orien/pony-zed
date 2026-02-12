@@ -59,9 +59,12 @@ To test this extension during development:
 
 ## Configuration
 
-### Pony Standard Library Path
+The Pony LSP server offers two configuration settings in your Zed `settings.json`:
 
-The extension needs to know where to find the Pony standard library packages. Add this to your Zed `settings.json`:
+1. **`executable`** (optional) - Path to the `pony-lsp` binary. If not set, Zed will search for `pony-lsp` on your system PATH.
+2. **`pony_stdlib_path`** (required) - Path to the Pony standard library packages directory. The LSP server needs this to provide language features.
+
+### Configuring the LSP Server
 
 1. Open Zed settings: `cmd-,` (macOS) or `ctrl-,` (Linux/Windows)
 2. Add the following configuration:
@@ -71,13 +74,16 @@ The extension needs to know where to find the Pony standard library packages. Ad
   "lsp": {
     "pony-language-server": {
       "settings": {
-        "executable": "/home/user/pony/bin/pony-lsp",
-        "pony_stdlib_path": "/opt/homebrew/Cellar/ponyc/0.60.4/packages"
+        "executable": "/opt/homebrew/bin/pony-lsp",
+        "pony_stdlib_path": "/opt/homebrew/Cellar/ponyc/0.60.6/packages"
       }
     }
   }
 }
 ```
+
+> [!NOTE]
+> If `pony-lsp` is already on your PATH, you can omit the `executable` setting.
 
 **Finding your stdlib path:**
 
@@ -92,7 +98,7 @@ Or manually locate it based on your Pony installation:
 - **Homebrew (Intel Mac)**: `/usr/local/Cellar/ponyc/VERSION/packages`
 - **Linux**: `/usr/lib/pony` or `/usr/share/ponyc/packages`
 
-Replace `VERSION` with your installed Pony version (e.g., `0.60.4`).
+Replace `VERSION` with your installed Pony version (e.g., `0.60.6`).
 
 ## Usage
 
