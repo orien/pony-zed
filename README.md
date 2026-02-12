@@ -120,8 +120,7 @@ To run a task:
 
 - [Zed editor](https://zed.dev)
 - [Rust](https://rustup.rs/) (required for building the extension)
-- [Pony compiler](https://www.ponylang.io/) (required for building pony-language-server)
-- [pony-language-server](https://github.com/ponylang/pony-language-server) (optional, enables LSP features)
+- [pony-lsp](https://github.com/ponylang/ponyc) (optional, enables LSP features)
 
 ### Building
 
@@ -183,7 +182,7 @@ If the LSP server is running but features don't work:
 
 1. Verify pony-lsp is installed and on PATH
 2. Check Zed log for pony-lsp errors
-3. Ensure you're using pony-language-server v0.2.2 or later
+3. Ensure you're using pony-lsp v0.60.6 or later
 
 ### Extension not loading
 
@@ -194,10 +193,9 @@ If the LSP server is running but features don't work:
 ## Resources
 
 - [Zed Extension Documentation](https://zed.dev/docs/extensions/developing-extensions)
-- [Pony Language Server](https://github.com/ponylang/pony-language-server)
+- [Pony Language Server](https://github.com/ponylang/ponyc/tree/main/tools/pony-lsp)
 - [Pony Language Tutorial](https://tutorial.ponylang.io/)
 - [Pony Language Website](https://www.ponylang.io/)
-- [Pony GitHub Repository](https://github.com/ponylang/ponyc)
 
 ## License
 
