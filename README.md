@@ -29,6 +29,16 @@ This extension provides Pony language support for Zed, including:
 
 ## Installation
 
+### Prerequisites
+
+To enable LSP features, install `pony-lsp`. On macOS and Linux one option is via Homebrew:
+
+```bash
+brew install ponyc
+```
+
+Alternitively, use [`ponyup`](https://github.com/ponylang/ponyup), or build from source via the [ponyc](https://github.com/ponylang/ponyc) Git repository.
+
 ### From Zed Extensions
 
 Once published, you'll be able to install this extension directly from the Zed extensions panel:
@@ -46,31 +56,6 @@ To test this extension during development:
 2. Navigate to the Extensions panel
 3. Click "Install Dev Extension"
 4. Select this repository directory
-
-### Language Server Installation (Required for LSP Features)
-
-To enable LSP features, you must install `pony-lsp`:
-
-```bash
-# Clone, build, and install ponyc and pony-lsp
-git clone https://github.com/ponylang/ponyc
-cd ponyc
-make configure
-make libs
-make
-make install
-
-# The binary will be at: build/release/pony-lsp
-# Add it to your PATH, for example:
-export PATH="$PATH:$(pwd)/build/release"
-```
-
-Verify installation:
-```bash
-which pony-lsp
-```
-
-**Note:** The language server must be built from source as there are no prebuilt binaries available.
 
 ## Configuration
 
