@@ -52,10 +52,13 @@ To test this extension during development:
 To enable LSP features, you must install `pony-lsp`:
 
 ```bash
-# Clone and build pony-language-server
-git clone https://github.com/ponylang/pony-language-server
-cd pony-language-server
-make language_server
+# Clone, build, and install ponyc and pony-lsp
+git clone https://github.com/ponylang/ponyc
+cd ponyc
+make configure
+make libs
+make
+make install
 
 # The binary will be at: build/release/pony-lsp
 # Add it to your PATH, for example:
