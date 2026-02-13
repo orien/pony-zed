@@ -25,7 +25,8 @@ This extension provides Pony language support for Zed, including:
 - **Language Server Protocol (LSP)** integration - Basic LSP support
 - **Go to definition** - Navigate to symbol definitions
 
-**Note:** The Pony LSP server (v0.2.2) is still in early development. Additional features like hover documentation, code completion, find references, and rename are not yet implemented in the server itself.
+> [!NOTE]
+> The Pony LSP server is still in early development. Additional features like code completion, find references, and rename are not yet implemented in the server itself.
 
 ## Installation
 
