@@ -42,7 +42,7 @@ Alternitively, use [`ponyup`](https://github.com/ponylang/ponyup), or build from
 
 ### From Zed Extensions
 
-Once published, you'll be able to install this extension directly from the Zed extensions panel:
+Install the release directly from the Zed extensions panel:
 
 1. Open Zed
 2. Press `cmd-shift-x` (macOS) or `ctrl-shift-x` (Linux/Windows)
