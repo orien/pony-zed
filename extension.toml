@@ -4,7 +4,7 @@ description = "Pony language support with syntax highlighting and LSP integratio
 version = "0.6.0"
 schema_version = 1
 authors = ["Orien Madgwick <497874+orien@users.noreply.github.com>"]
-repository = "https://github.com/orien/pony-zed-extension"
+repository = "https://github.com/orien/pony-zed"
 
 [grammars.pony]
 repository = "https://github.com/tree-sitter-grammars/tree-sitter-pony"
