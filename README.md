@@ -22,11 +22,10 @@ This extension provides Pony language support for Zed, including:
 - **Bracket matching** - Syntax-aware bracket pairing and rainbow brackets
 - **Vim text objects** - Text objects for functions, classes, and comments (vim mode)
 - **Corral tasks** - Built-in tasks for fetching dependencies and building projects
-- **Language Server Protocol (LSP)** integration - Basic LSP support
-- **Go to definition** - Navigate to symbol definitions
+- **Language Server Protocol (LSP)** integration with the `pony-lsp` language server
 
 > [!NOTE]
-> The Pony LSP server is still in early development. Additional features like code completion, find references, and rename are not yet implemented in the server itself.
+> The Pony language server is still in early development. Some features are not yet implemented in the server itself.
 
 ## Installation
 
