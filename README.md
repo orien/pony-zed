@@ -60,9 +60,14 @@ To test this extension during development:
 
 ## Configuration
 
-The Pony LSP server offers the following configuration setting in your Zed `settings.json`:
+The extension exposes one setting under `lsp.pony-lsp.settings` in your Zed `settings.json`:
 
 1. **`executable`** (optional) - Path to the `pony-lsp` binary. If not set, Zed will search for `pony-lsp` on your system PATH.
+
+The LSP server supports the following initialization options via `lsp.pony-lsp.initialization_options`:
+
+- **`ponypath`** (optional) - A list of paths to search for Pony packages.
+- **`defines`** (optional) - A list of compile-time definitions.
 
 ### Configuring the LSP Server
 
@@ -75,6 +80,16 @@ The Pony LSP server offers the following configuration setting in your Zed `sett
     "pony-lsp": {
       "settings": {
         "executable": "/opt/homebrew/bin/pony-lsp"
+      },
+      "initialization_options": {
+        "ponypath": [
+          "/path/to/project-a/packages",
+          "/path/to/project-b/packages"
+        ],
+        "defines": [
+          "MY_DEFINE_ONE",
+          "MY_DEFINE_TWO",
+        ]
       }
     }
   }

@@ -1,4 +1,4 @@
-use zed_extension_api::{self as zed, serde_json, settings::LspSettings, Result};
+use zed_extension_api::{self as zed, settings::LspSettings, Result};
 
 struct PonyExtension;
 
@@ -39,16 +39,6 @@ impl zed::Extension for PonyExtension {
             args: vec!["--stdio".to_string()],
             env: worktree.shell_env(),
         })
-    }
-
-    fn language_server_initialization_options(
-        &mut self,
-        _language_server_id: &zed::LanguageServerId,
-        worktree: &zed::Worktree,
-    ) -> Result<Option<serde_json::Value>> {
-        Ok(Some(serde_json::json!({
-            "ponypath": [worktree.root_path().to_string()],
-        })))
     }
 }
 

@@ -18,4 +18,3 @@ languages = ["Pony"]
 type = "string"
 default = "pony-lsp"
 description = "File location of the Pony language server executable. If not set, will search for `pony-lsp` on the system PATH."
-
