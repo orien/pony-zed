@@ -46,24 +46,8 @@ impl zed::Extension for PonyExtension {
         _language_server_id: &zed::LanguageServerId,
         worktree: &zed::Worktree,
     ) -> Result<Option<serde_json::Value>> {
-        let mut ponypath = vec![worktree.root_path().to_string()];
-
-        if let Some(stdlib_path) = LspSettings::for_worktree("pony-lsp", worktree)
-            .ok()
-            .and_then(|settings| settings.settings)
-            .and_then(|settings_value| {
-                settings_value
-                    .get("pony_stdlib_path")
-                    .and_then(|v| v.as_str())
-                    .filter(|path| !path.is_empty())
-                    .map(|path| path.to_string())
-            })
-        {
-            ponypath.push(stdlib_path);
-        }
-
         Ok(Some(serde_json::json!({
-            "ponypath": ponypath,
+            "ponypath": [worktree.root_path().to_string()],
         })))
     }
 }

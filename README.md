@@ -60,10 +60,9 @@ To test this extension during development:
 
 ## Configuration
 
-The Pony LSP server offers two configuration settings in your Zed `settings.json`:
+The Pony LSP server offers the following configuration setting in your Zed `settings.json`:
 
 1. **`executable`** (optional) - Path to the `pony-lsp` binary. If not set, Zed will search for `pony-lsp` on your system PATH.
-2. **`pony_stdlib_path`** (required) - Path to the Pony standard library packages directory. The LSP server needs this to provide language features.
 
 ### Configuring the LSP Server
 
@@ -75,8 +74,7 @@ The Pony LSP server offers two configuration settings in your Zed `settings.json
   "lsp": {
     "pony-lsp": {
       "settings": {
-        "executable": "/opt/homebrew/bin/pony-lsp",
-        "pony_stdlib_path": "/opt/homebrew/Cellar/ponyc/0.60.6/packages"
+        "executable": "/opt/homebrew/bin/pony-lsp"
       }
     }
   }
@@ -85,21 +83,6 @@ The Pony LSP server offers two configuration settings in your Zed `settings.json
 
 > [!NOTE]
 > If `pony-lsp` is already on your PATH, you can omit the `executable` setting.
-
-**Finding your stdlib path:**
-
-On macOS/Linux, run this command to find the correct path:
-
-```bash
-readlink -f $(which ponyc) | sed 's|/bin/ponyc|/packages|'
-```
-
-Or manually locate it based on your Pony installation:
-- **Homebrew (Apple Silicon)**: `/opt/homebrew/Cellar/ponyc/VERSION/packages`
-- **Homebrew (Intel Mac)**: `/usr/local/Cellar/ponyc/VERSION/packages`
-- **Linux**: `/usr/lib/pony` or `/usr/share/ponyc/packages`
-
-Replace `VERSION` with your installed Pony version (e.g., `0.60.6`).
 
 ## Usage
 
@@ -173,17 +156,14 @@ If you see this error when opening a `.pony` file:
 
 If the LSP server is running but features don't work:
 
-1. Ensure you've configured `pony_stdlib_path` in your Zed settings (see Configuration section above)
-2. Verify the stdlib path exists: `ls /path/to/your/stdlib/builtin`
-3. Check the LSP logs: `cmd-shift-P` → "zed: open log"
-4. Look for "initial PONYPATH:" in the logs - it should include both your project and stdlib paths
-5. Ensure your project has a `corral.json` file listing local packages
+1. Check the LSP logs: `cmd-shift-P` → "zed: open log"
+2. Ensure your project has a `corral.json` file listing local packages
 
 ### LSP server not starting
 
 1. Verify pony-lsp is installed and on PATH
 2. Check Zed log for pony-lsp errors
-3. Ensure you're using pony-lsp v0.60.6 or later
+3. Ensure you're using pony-lsp v0.61.0 or later
 
 ### Extension not loading
 

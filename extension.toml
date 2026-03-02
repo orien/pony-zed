@@ -19,7 +19,3 @@ type = "string"
 default = "pony-lsp"
 description = "File location of the Pony language server executable. If not set, will search for `pony-lsp` on the system PATH."
 
-[settings.pony_stdlib_path]
-type = "string"
-default = ""
-description = "Path to the Pony standard library packages directory. Find it with: readlink -f $(which ponyc) | sed 's|/bin/ponyc|/packages|'. Example: /opt/homebrew/Cellar/ponyc/0.60.4/packages"
