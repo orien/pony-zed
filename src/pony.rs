@@ -13,7 +13,7 @@ impl zed::Extension for PonyExtension {
         worktree: &zed::Worktree,
     ) -> Result<zed::Command> {
         // Check for custom pony-lsp path in settings first
-        let server_path = LspSettings::for_worktree("pony-language-server", worktree)
+        let server_path = LspSettings::for_worktree("pony-lsp", worktree)
             .ok()
             .and_then(|settings| settings.settings)
             .and_then(|settings_value| {
@@ -48,7 +48,7 @@ impl zed::Extension for PonyExtension {
     ) -> Result<Option<serde_json::Value>> {
         let mut ponypath = vec![worktree.root_path().to_string()];
 
-        if let Some(stdlib_path) = LspSettings::for_worktree("pony-language-server", worktree)
+        if let Some(stdlib_path) = LspSettings::for_worktree("pony-lsp", worktree)
             .ok()
             .and_then(|settings| settings.settings)
             .and_then(|settings_value| {

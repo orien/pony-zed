@@ -73,7 +73,7 @@ The Pony LSP server offers two configuration settings in your Zed `settings.json
 ```json
 {
   "lsp": {
-    "pony-language-server": {
+    "pony-lsp": {
       "settings": {
         "executable": "/opt/homebrew/bin/pony-lsp",
         "pony_stdlib_path": "/opt/homebrew/Cellar/ponyc/0.60.6/packages"

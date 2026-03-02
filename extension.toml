@@ -10,7 +10,7 @@ repository = "https://github.com/orien/pony-zed-extension"
 repository = "https://github.com/tree-sitter-grammars/tree-sitter-pony"
 commit = "73ff874ae4c9e9b45462673cbc0a1e350e2522a7"
 
-[language_servers.pony-language-server]
+[language_servers.pony-lsp]
 name = "Pony Language Server"
 languages = ["Pony"]
 
